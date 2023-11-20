@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Company Profile',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'FN Digital Code'),
     );
   }
 }
@@ -54,16 +54,43 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(title: Text(this.title)),
-        body: GestureDetector(
-          onTap: () => Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => WidgetPage(),
-          )),
-          child: Hero(
-              tag: "image1",
-              child: Image.network(
-                'https://fastly.picsum.photos/id/439/400/300.jpg?hmac=T6Bk-1o9GegngeOBDhBBSVPOVrouElmTxG-tSUXjMJI',
-                width: 50,
+        body: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => WidgetPage(),
               )),
+              child: Hero(
+                  tag: "image1",
+                  child: Image.network(
+                    'https://fastly.picsum.photos/id/439/400/300.jpg?hmac=T6Bk-1o9GegngeOBDhBBSVPOVrouElmTxG-tSUXjMJI',
+                    width: 200,
+                  )),
+            ),
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => WidgetPage(),
+              )),
+              child: Hero(
+                  tag: "image1",
+                  child: Image.network(
+                    'https://fastly.picsum.photos/id/439/400/300.jpg?hmac=T6Bk-1o9GegngeOBDhBBSVPOVrouElmTxG-tSUXjMJI',
+                    width: 200,
+                  )),
+            ),
+            GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => WidgetPage(),
+              )),
+              child: Hero(
+                  tag: "image1",
+                  child: Image.network(
+                    'https://fastly.picsum.photos/id/439/400/300.jpg?hmac=T6Bk-1o9GegngeOBDhBBSVPOVrouElmTxG-tSUXjMJI',
+                    width: 200,
+                  )),
+            ),
+          ],
         ),
       );
 }
